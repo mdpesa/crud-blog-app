@@ -13,11 +13,11 @@ const NavBar = () => {
     >
       <Container>
         <Navbar.Brand href='/'>Blog.app</Navbar.Brand>
-        <Nav>
-          <Nav.Link as={NavLink} to='/'>
+        <Nav className='flex-sm-row '>
+          <Nav.Link className='py-0 me-2' as={NavLink} to='/'>
             Home
           </Nav.Link>
-          <Nav.Link as={NavLink} to='/about'>
+          <Nav.Link className='py-0' as={NavLink} to='/about'>
             About
           </Nav.Link>
         </Nav>
