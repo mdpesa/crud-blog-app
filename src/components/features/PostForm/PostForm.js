@@ -12,7 +12,7 @@ const PostForm = (action, actionText, ...props) => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    action({ title, author, publishedDate, shortDescription, content });
+    action({title, author, publishedDate, shortDescription, content });
   };
 
   
@@ -84,7 +84,7 @@ const PostForm = (action, actionText, ...props) => {
         type='submit'
         variant='primary'
       >
-        {/* {actionText} */}
+        {/* {actionText}  */}
       </Button>
     </Form>
   );
