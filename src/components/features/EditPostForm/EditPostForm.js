@@ -23,7 +23,7 @@ export const EditPostForm = () => {
       title={postData.title}
       author={postData.author}
       publishedDate={postData.publishedDate}
-      description={postData.shortDescription}
+      shortDescription={postData.shortDescription}
       content={postData.content}
     />
   );

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
 
-const PostForm = (action, actionText, ...props) => {
+const PostForm = ({action, actionText, ...props}) => {
   const [title, setTitle] = useState(props.title || '');
   const [author, setAuthor] = useState(props.author || '');
   const [publishedDate, setPublishedDate] = useState(props.publishedDate || '');
@@ -84,7 +84,7 @@ const PostForm = (action, actionText, ...props) => {
         type='submit'
         variant='primary'
       >
-        {/* {actionText}  */}
+        {actionText}
       </Button>
     </Form>
   );
