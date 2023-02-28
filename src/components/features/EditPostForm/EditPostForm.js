@@ -4,20 +4,20 @@ import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 export const EditPostForm = () => {
-  const { postId } = useParams();
-  const postData = useSelector((state) => getPostById(state, postId));
+  const { id } = useParams();
+  const postData = useSelector((state) => getPostById(state, id));
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleSubmit = (post) => {
-    dispatch(editPost({ ...post, postId }));
+    dispatch(editPost({ ...post, id }));
     navigate('/');
   };
   if (!postData) return <Navigate to='/' />;
   return (
     <PostForm
-      id={postId}
+      id={id}
       action={handleSubmit}
       actionText='Edit post'
       title={postData.title}

@@ -6,8 +6,8 @@ import { Button, Card, Col, Row, Modal } from 'react-bootstrap';
 import { useState } from 'react';
 
 const Post = () => {
-  const { postId } = useParams();
-  const postData = useSelector((state) => getPostById(state, postId));
+  const { id } = useParams();
+  const postData = useSelector((state) => getPostById(state, id));
 
   const [show, setShow] = useState(false);
 
@@ -41,7 +41,7 @@ const Post = () => {
           <Button
             variant='outline-info'
             as={NavLink}
-            to={'/post/edit/' + postId}
+            to={'/post/edit/' + id}
           >
             Edit
           </Button>
