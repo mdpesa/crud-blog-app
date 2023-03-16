@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
-const PostForm = ({action, actionText, ...props}) => {
+const PostForm = ({ action, actionText, ...props }) => {
   const [title, setTitle] = useState(props.title || '');
   const [author, setAuthor] = useState(props.author || '');
   const [publishedDate, setPublishedDate] = useState(props.publishedDate || '');
@@ -9,13 +11,11 @@ const PostForm = ({action, actionText, ...props}) => {
     props.shortDescription || ''
   );
   const [content, setContent] = useState(props.content || '');
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    action({title, author, publishedDate, shortDescription, content });
+    action({ title, author, publishedDate, shortDescription, content });
   };
-
-  
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -64,26 +64,16 @@ const PostForm = ({action, actionText, ...props}) => {
       </Form.Group>
       <Form.Group className='mb-3 w-75'>
         <Form.Label>Main content</Form.Label>
-        <FloatingLabel
-          controlId='floatingTextarea2'
-          label='Leave a comment here'
-          className='text-muted'
-        >
-          <Form.Control
-            as='textarea'
-            placeholder='Leave a comment here'
-            style={{ height: '200px' }}
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-          />
-        </FloatingLabel>
+        <ReactQuill
+          theme='snow'
+          placeholder='Leave a comment here'
+          style={{ height: '200px' }}
+          value={content}
+          onChange={setContent}
+        />
       </Form.Group>
 
-      <Button
-        className='mt-3'
-        type='submit'
-        variant='primary'
-      >
+      <Button className='mt-5' type='submit' variant='primary'>
         {actionText}
       </Button>
     </Form>

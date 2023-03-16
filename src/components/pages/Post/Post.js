@@ -34,15 +34,14 @@ const Post = () => {
                 {postData.publishedDate} <br />
               </Card.Text>
               <Card.Text>{postData.shortDescription}</Card.Text>
+              <Card.Text
+                dangerouslySetInnerHTML={{ __html: postData.content }}
+              />
             </Card.Body>
           </Card>
         </Col>
         <Col className='d-flex justify-content-end align-items-center'>
-          <Button
-            variant='outline-info'
-            as={NavLink}
-            to={'/post/edit/' + id}
-          >
+          <Button variant='outline-info' as={NavLink} to={'/post/edit/' + id}>
             Edit
           </Button>
           <Button
