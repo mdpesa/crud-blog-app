@@ -33,7 +33,10 @@ const Post = () => {
                 {postData.author} <br />
                 <strong>Published: </strong>
                 {dateToStr(postData.publishedDate)} <br />
+                <strong>Category: </strong>
+                {postData.category}
               </Card.Text>
+
               <Card.Text>{postData.shortDescription}</Card.Text>
               <Card.Text
                 dangerouslySetInnerHTML={{ __html: postData.content }}

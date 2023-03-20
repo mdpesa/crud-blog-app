@@ -19,6 +19,8 @@ const AllPosts = () => {
                 {post.author} <br />
                 <strong>Published: </strong>
                 {dateToStr(post.publishedDate)} <br />
+                <strong>Category: </strong>
+                {post.category}
               </Card.Text>
               <Card.Text>{post.shortDescription}</Card.Text>
               <Button variant='primary' as={NavLink} to={'/post/' + post.id}>
