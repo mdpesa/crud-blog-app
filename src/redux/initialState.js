@@ -33,7 +33,7 @@ const initialState = {
       shortDescription: 'Short description of the article...',
       content: 'Main content of the article',
       publishedDate: new Date('02-02-2022'),
-      category: 'sport',
+      category: 'movies',
       author: 'John Doe',
     },
   ],
