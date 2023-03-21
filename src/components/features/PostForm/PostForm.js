@@ -93,7 +93,7 @@ const PostForm = ({ action, actionText, ...props }) => {
         <Form.Label>Category</Form.Label>
         <Form.Select
           {...register('category', { required: true })}
-          value='category'
+          value={category}
           onChange={(e) => setCategory(e.target.value)}
         >
           <option>Select category...</option>
