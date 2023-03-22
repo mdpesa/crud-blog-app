@@ -6,7 +6,7 @@ const PostEdit = () => {
     return (
         <Row className='d-flex justify-content-center'>
           <Col>
-            <h1>Add post</h1>
+            <h1>Edit post</h1>
             <EditPostForm/>
           </Col>
         </Row>
